@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: menu_saas
+      POSTGRES_PASSWORD: menu_saas
+      POSTGRES_DB: menu_saas
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+volumes:
+  db-data:
